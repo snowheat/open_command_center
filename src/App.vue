@@ -1,29 +1,40 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="columns is-multiline">
+      <div class="column is-12" id="main-header">
+        <h1>Jabar Intelligent Operation Center for Smarter Region</h1>
+        <div id="logo"><b>JIOC</b><img src="@/assets/logo_60.png" width="32"></div>
+      </div>
+      <div class="column is-12" id="top-navigation">
+        <div id="top-navigation-selected-region">Provinsi Jawa Barat</div>
+        <div id="top-navigation-select-region">
+          <span>Select region</span>
+          <div class="select is-small">
+            <select>
+              <option value="">Regency / City</option>
+            </select>
+          </div>
+          <div class="select is-small">
+            <select>
+              <option value="">Subdistrict</option>
+            </select>
+          </div>
+          <div class="select is-small">
+            <select>
+              <option value="">Village</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column is-12" id="content">
+        <router-view/>
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import url('https://js.arcgis.com/4.8/esri/css/main.css');
+@import url('../node_modules/bulma/css/bulma.css');
+@import url('./assets/less/app');
 </style>

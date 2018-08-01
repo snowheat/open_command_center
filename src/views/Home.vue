@@ -1,6 +1,28 @@
 <template>
-  <div class="home">
-    <div id="viewDiv"></div>
+  <div id="home" class="columns">
+    <div id="right-sidebar" class="column">
+      <div class="columns is-multiline">
+        <div id="right-sidebar-menu" class="column">
+          <h3>Menu</h3>
+          <div class="select">
+            <select>
+              <option value="">Keluhan - LAPOR</option>
+              <option value="">CCTV</option>
+              <option value="">Potensi Desa</option>
+              <option value="">Infrastruktur</option>
+              <option value="">Pemerintahan</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map" class="column">
+      <div class="columns">
+        <div class="column">
+          <div id="view-div"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,12 +41,12 @@ export default {
       .then(([MapView, Map]) => {
         // then we load a web map from an id
         const webmap = new Map({
-          basemap: 'streets',
+          basemap: 'satellite',
         });
         // and we show that map in a container w/ id #viewDiv
         const view = new MapView({
           map: webmap,
-          container: 'viewDiv',
+          container: 'view-div',
           zoom: 4,
           center: [15, 65],
         });
@@ -40,10 +62,5 @@ export default {
 </script>
 
 <style lang="less">
-#viewDiv {
-  width: 1000px;
-  height: 600px;
-  background: gray;
-}
+@import url('../assets/less/home');
 </style>
-

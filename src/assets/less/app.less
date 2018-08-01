@@ -1,0 +1,109 @@
+@black: #000000;
+@black-1: #1b1b1b;
+@black-2: #2e2e2e;
+@black-logo-1: #080808;
+@black-logo-2: #232323;
+@green-1: #05823d;
+@green-2: #31ad69;
+@green-light-1: #42be7a;
+@green-dark-1: #033b20;
+@text-color: #aaaaaa;
+@link-color: #eeeeee;
+@top-bar-height: 40px;
+
+.margin-padding-zero {
+    padding: 0;
+    margin: 0;
+}
+
+.height-weight-full {
+    height: 100%;
+    width: 100%;
+}
+
+html, body, #app{
+    .margin-padding-zero();
+    .height-weight-full();
+    color: @text-color;
+    a {
+        color: @link-color;
+    }
+}
+
+#app {
+    background: @black;
+    > .columns {
+        .margin-padding-zero();
+        height: 100%;
+        flex-direction: column;
+    }
+}
+
+#main-header {
+    .margin-padding-zero();
+    height: @top-bar-height;
+    background: linear-gradient(@black-2, @black-1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    h1 {
+        flex-grow: 1;
+        padding-left: 1.5rem;
+        color: @link-color;
+    }
+
+    #logo {
+        padding: 0 1rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(@black-logo-2, @black-logo-1);
+
+        img {
+            margin-left: 0.25rem;
+        }
+    }
+}
+
+#top-navigation {
+    .margin-padding-zero();
+    background: linear-gradient(@green-2, @green-1);
+    height: 1.25 * @top-bar-height;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: @link-color;
+    border-top: 1px solid @green-light-1;
+
+    #top-navigation-selected-region {
+        padding-left: 1.5rem;
+        flex-grow: 1;
+        font-size: 1.25rem;
+    }
+
+    #top-navigation-select-region {
+        padding-right: 1.5rem;
+
+        div.select {
+            margin-left: 0.5rem;
+            select {
+                // background: @green-dark-1;
+                background: linear-gradient(@black-logo-2, @black-logo-1);
+                color: @link-color;
+                border-color: @black;
+            }
+
+            
+        }
+
+        div.select::after {
+            border-color: @link-color;
+        }
+    }
+}
+
+#content {
+    flex-grow: 1;
+    padding-bottom: 0;
+}
